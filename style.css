@@ -1,1 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.game-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#game-canvas {
+    background-color: #4CAF50;
+    border: 5px solid #333;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    touch-action: none;
+}
+
+.hud {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border-radius: 5px 5px 0 0;
+}
+
+.team {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.team-a {
+    color: #3498db;
+}
+
+.team-b {
+    color: #e74c3c;
+}
+
+.score {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.timer {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 0 0 5px 5px;
+}
+
+.controls button, .controls select {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.controls button:hover {
+    opacity: 0.9;
+}
+
+.mobile-controls {
+    display: none;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.joystick-left, .joystick-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.joystick-left > div {
+    display: flex;
+    gap: 5px;
+}
+
+.joystick-left button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.joystick-right button {
+    width: 80px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .mobile-controls {
+        display: flex;
+    }
+    
+    .game-container {
+        padding: 10px;
+    }
+    
+    #game-canvas {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    #game-canvas {
+        height: 300px;
+    }
+    
+    .hud {
+        font-size: 14px;
+    }
+    
+    .score, .timer {
+        font-size: 18px;
+    }
+}
