@@ -1,1 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Futebol Simples</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="hud">
+            <div class="team team-a">
+                <div class="name">Time A</div>
+                <div class="score">0</div>
+            </div>
+            <div class="timer">05:00</div>
+            <div class="team team-b">
+                <div class="score">0</div>
+                <div class="name">Time B</div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="start-btn">Iniciar</button>
+            <button id="pause-btn">Pausar</button>
+            <button id="reset-btn">Reiniciar</button>
+            <select id="game-mode">
+                <option value="pvp">PvP (2 Jogadores)</option>
+                <option value="pve">PvE (vs Computador)</option>
+            </select>
+        </div>
+        
+        <canvas id="game-canvas"></canvas>
+        
+        <div class="mobile-controls">
+            <div class="joystick-left">
+                <button class="up" data-direction="up">↑</button>
+                <div>
+                    <button class="left" data-direction="left">←</button>
+                    <button class="right" data-direction="right">→</button>
+                </div>
+                <button class="down" data-direction="down">↓</button>
+            </div>
+            <div class="joystick-right">
+                <button id="sprint-btn">Correr</button>
+                <button id="kick-btn">Chutar</button>
+            </div>
+        </div>
+    </div>
 
+    <script src="script.js"></script>
+</body>
+</html>
